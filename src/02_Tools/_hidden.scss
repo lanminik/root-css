@@ -1,0 +1,18 @@
+// Mixin to quickly apply accessible hiding to elements.
+
+@mixin root-visually-hidden($important: false) {
+  $important-str: "";
+  @if ($important) {
+    $important-str: "!important";
+  }
+
+  position: absolute #{$important-str};
+  height: 1px #{$important-str};
+  width: 1px #{$important-str};
+  margin: -1px #{$important-str};
+  padding: 0 #{$important-str};
+  border: 0 #{$important-str};
+
+  overflow: hidden #{$important-str};
+  clip: rect(0 0 0 0) #{$important-str};
+}

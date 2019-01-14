@@ -1,0 +1,14 @@
+// -------------------------------------
+// Retrieve z-index from $z-index
+// (01_settings/_z-index.scss)
+//
+// Example:
+//  .item { z-index: z(hole); }
+//
+// Equates to:
+//  .item { z-indes: -1; }
+// -------------------------------------
+
+@function z($z-index-variant) {
+  @return map-get($z-index, $z-index-variant);
+}

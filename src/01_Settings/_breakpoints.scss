@@ -1,0 +1,19 @@
+// Breakpoints configs for SassMQ
+//
+// Example usage:
+//
+// @include root-mq($from: tablet) {}
+
+$root-mobile: 320px;
+$root-tablet: 768px;
+$root-desktop: 980px;
+$root-wide: 1280px;
+$root-hd: 1920px;
+
+$breakpoints: (
+  xs: $root-mobile,
+  sm: $root-tablet,
+  md: $root-desktop,
+  lg: $root-wide,
+  hd: $root-hd
+);

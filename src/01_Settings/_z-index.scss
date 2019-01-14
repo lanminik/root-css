@@ -1,0 +1,15 @@
+// ------------------------------------
+// Z-Index Variables
+// ------------------------------------
+
+$z-index: (
+  hole: -1,
+  ground: 1,
+  hill: 2,
+  mountain: 3,
+  atmosphere: 4,
+  stratosphere: 5,
+  moon: 6,
+  mars: 7,
+  jupiter: 8
+);

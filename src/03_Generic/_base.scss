@@ -1,0 +1,64 @@
+html,
+body {
+  @include root-font("def");
+  line-height: $root-line-height;
+}
+
+small {
+  font-size: 80%;
+}
+
+strong {
+  font-weight: 600;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+//--- Webkit Hacks
+html {
+  -webkit-font-smoothing: antialiased;
+} // ugly Mac OS fonts rendering
+input,
+textarea,
+select {
+  box-sizing: inherit;
+} // user agent stylesheet default is box-sizing: border-box
+
+//--- Webkit Custom input[type=search]
+input[type="search"] {
+  -webkit-appearance: textfield !important;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+*:focus {
+  outline: none;
+}
+
+/* Base site font size set in px.
+ * All other font sizes will be rem based from this.
+ */
+ @each $breakpoint in map-keys($root-font-size-breakpoint-multipliers) {
+  @include root-respond-to($breakpoint) {
+    html {
+      $breakpoint-multiplier: map-get($root-font-size-breakpoint-multipliers, $breakpoint);
+      font-size: $root-font-size-default * $breakpoint-multiplier;
+    }
+  }
+}

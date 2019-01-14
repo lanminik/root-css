@@ -1,0 +1,6 @@
+/* Rem based font sizing */
+@mixin root-font($element-key, $font-family: $root-font-family-base) {
+  $multiplier: map-get($root-font-size-element-multipliers, $element-key);
+  font-size: 1rem * $multiplier;
+  font-family: $font-family;
+}

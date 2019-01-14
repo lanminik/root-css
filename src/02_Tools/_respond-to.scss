@@ -1,0 +1,23 @@
+/* Rewrote typography to be responsive on a screen size change */
+@mixin root-respond-to($breakpoint) {
+  $max-index: str-index($breakpoint, "max-");
+
+  @if $max-index == null {
+    @if map-has-key($breakpoints, $breakpoint) == false {
+      @warn 'Could not find key `#{$breakpoint}` in `$breakpoints` map.';
+    }
+
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    $breakpoint: str-slice($breakpoint, 5);
+    @if map-has-key($breakpoints, $breakpoint) == false {
+      @warn 'Could not find key `#{$breakpoint}` in `$breakpoints` map.';
+    }
+
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}

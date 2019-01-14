@@ -1,0 +1,18 @@
+// -------------------------------------
+// Retrieve color from $root-colors
+// (01_Settigns/_colors.scss)
+//
+// Example:
+//  .item { background: color(base, prim); }
+//
+// Equates to:
+//  .item { background: #F0A; }
+// -------------------------------------
+
+@function color($color-name, $color-variant: null) {
+  @if ($color-variant != null) {
+    @return map-get(map-get($root-colors, $color-name), $color-variant);
+  } @else {
+    @return map-get($root-colors, $color-name);
+  }
+}

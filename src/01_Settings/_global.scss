@@ -1,0 +1,11 @@
+/* Where to refer for fonts, images and other resources*/
+$root-path-img: "../img" !default;
+$root-path-fonts: "../fonts" !default;
+
+/* Layout */
+$root-content-width: 1280px !default;
+$root-line-height: 1.5 !default;
+
+/* Standardise some UI treatments. */
+$root-radius: 3px !default;
+$root-transition: all 300ms ease-in-out !default;

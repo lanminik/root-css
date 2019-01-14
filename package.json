@@ -1,0 +1,22 @@
+{
+  "name": "itcss-boilerpalte",
+  "version": "1.0.0",
+  "description": "Boilerplate project folowing ITCSS structure.",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server --open --mode development",
+    "build": "node-sass ./src/style.scss dist/style.css && npm run autoprefix && npm run clean",
+    "watch": "npm run build && node-sass ./dist/sass/main.scss dist/style.css -w",
+    "autoprefix": "postcss -u autoprefixer -r ./dist/style.css",
+    "clean": "cleancss -o dist/style.css dist/style.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "clean-css": "^3.4.0",
+    "node-sass": "^4.0.0",
+    "postcss-cli": "^2.6.0",
+    "stylelint": "^7.8.0"
+  },
+  "author": "Milan Nikolic",
+  "license": "ISC"
+}

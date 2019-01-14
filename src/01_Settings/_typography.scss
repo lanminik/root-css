@@ -1,0 +1,25 @@
+/* Font */
+$root-font-family-base: arial !default;
+$root-font-family-brand: Helvetica Neue, Calibri Light, Roboto, sans-serif !default;
+$root-font-size-default: 16px !default;
+
+$root-font-size-breakpoint-multipliers: (
+  xs: 0.8,
+  sm: 0.9,
+  md: 1,
+  lg: 1
+) !default;
+
+$root-font-size-element-multipliers: (
+  h1: 2.4,
+  h2: 2,
+  h3: 1.8,
+  h4: 1.5,
+  h5: 1.2,
+  h6: 1,
+  def: 1
+) !default;
+
+$root-font-weight-light:   300;
+$root-font-weight-regular: 400;
+$root-font-weight-bold:    700;

@@ -1,0 +1,11 @@
+// Generates an aspect ratio class, for example: .u-16by9
+// This is very useful for maintaining image height whilst the image is loading so the page doesn't bounce
+@mixin root-aspect-ratio($width, $height) {
+  .root-u-#{$width}by#{$height} {
+    @include root-aspect-ratio-top-padding($width, $height);
+  }
+}
+
+@mixin root-aspect-ratio-top-padding($width, $height) {
+  padding-top: ($height / $width) * 100%;
+}
